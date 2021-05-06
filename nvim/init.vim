@@ -8,11 +8,8 @@ function! PackInit() abort
         " Vimwiki
         cal minpac#add('vimwiki/vimwiki')
 
-	" Syntax highlighting suggested by amelia
-	call minpac#add('sheerun/vim-polyglot')
-
-	" Some themes
-	call minpac#add('Rigellute/shades-of-purple.vim')
+	" My version of shades of purple theme
+	call minpac#add('RosaTheMathGal/shades-of-purple.vim')
 
 	" Haskell
 	call minpac#add('neovimhaskell/haskell-vim')
@@ -26,9 +23,7 @@ command! PackUpdate call PackInit() | call minpac#update('', { 'do': 'call minpa
 set termguicolors
 colorscheme shades_of_purple
 
-filetype plugin on
 let g:tex_flavor = "latex"
-syntax on
 
 """ Workflow config------------------------------------------------------------- {{{1
 
@@ -63,9 +58,6 @@ set hlsearch
 
 
 """ Mapings--------------------------------------------------------------------- {{{1
-
-" Complile LaTeX
-noremap <Space>c :!xelatex %<CR>
 
 " Toggles relativenumber on/off
 noremap <C-n> :setlocal relativenumber!<cr>
